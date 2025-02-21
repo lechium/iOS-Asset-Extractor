@@ -26,11 +26,11 @@ int main(int argc, const char * argv[]) {
         }
         
         NSError *error = nil;
-        
-        CUIThemeFacet *facet = [CUIThemeFacet themeWithContentsOfURL:[NSURL fileURLWithPath:input] error:&error];
+        NSData *data = [NSData dataWithContentsOfFile:input];
+        unsigned long long f = [CUIThemeFacet themeWithBytes:[data bytes] length:[data length] error:&error];
         CUICatalog *catalog = [[CUICatalog alloc] init];
         /* Override CUICatalog to point to a file rather than a bundle */
-        [catalog setValue:facet forKey:@"_storageRef"];
+        [catalog setValue:@(f) forKey:@"_storageRef"];
         /* CUICommonAssetStorage won't link */
         CUICommonAssetStorage *storage = [[NSClassFromString(@"CUICommonAssetStorage") alloc] initWithPath:input];
         

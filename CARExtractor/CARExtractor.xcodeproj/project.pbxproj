@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32C833FD2D67E5EC002AA08A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C833FC2D67E5EB002AA08A /* ImageIO.framework */; };
 		CA7B544419FF10F80019A015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7B544319FF10F80019A015 /* main.m */; };
 		CA7B546419FF4A110019A015 /* CoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7B546319FF4A110019A015 /* CoreUI.framework */; };
 		EA942B0D1C6A6CFF008F7061 /* CARExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA942B0C1C6A6CFF008F7061 /* CARExporter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32C833FC2D67E5EB002AA08A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CA7B544019FF10F80019A015 /* CARExtractor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CARExtractor; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B544319FF10F80019A015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CA7B546319FF4A110019A015 /* CoreUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreUI.framework; path = ../../../../../../System/Library/PrivateFrameworks/CoreUI.framework; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C833FD2D67E5EC002AA08A /* ImageIO.framework in Frameworks */,
 				CA7B546419FF4A110019A015 /* CoreUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,10 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32C833FB2D67E5EB002AA08A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C833FC2D67E5EB002AA08A /* ImageIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA7B543719FF10F80019A015 = {
 			isa = PBXGroup;
 			children = (
 				CA7B544219FF10F80019A015 /* CARExtractor */,
+				32C833FB2D67E5EB002AA08A /* Frameworks */,
 				CA7B544119FF10F80019A015 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CA7B543719FF10F80019A015;
@@ -310,6 +323,7 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -321,6 +335,7 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
